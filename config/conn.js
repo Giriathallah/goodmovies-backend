@@ -1,7 +1,8 @@
 import { Sequelize } from "sequelize";
-import { config } from "dotenv";
+import dotenv from "dotenv";
 
-config();
+dotenv.config();
+const isProduction = process.env.NODE_ENV === "production";
 
 const db = new Sequelize(
   process.env.DB_NAME,
@@ -11,6 +12,7 @@ const db = new Sequelize(
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: "mysql",
+    logging: isProduction ? false : console.log,
   }
 );
 
