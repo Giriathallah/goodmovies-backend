@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: "https://goodmovies-two.vercel.app/", // Allow all origins
+  origin: "https://goodmovies-two.vercel.app", // Allow all origins
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
