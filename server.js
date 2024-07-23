@@ -7,12 +7,13 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
-// const corsOptions = {
-//   origin: "http://localhost:5173", // your frontend's origin
-//   optionsSuccessStatus: 200, // For legacy browser support
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-// };
-app.use(cors());
+const corsOptions = {
+  origin: "*", // Allow all origins
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
