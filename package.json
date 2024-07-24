@@ -5,7 +5,6 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "hello",
     "start": "nodemon run server.js"
   },
   "keywords": [],
