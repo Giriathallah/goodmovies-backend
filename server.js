@@ -21,7 +21,7 @@ const PORT = process.env.PORT;
 
 db.sync()
   .then(() => {
-    app.listen(PORT, "0.0.0.0", () => {
+    app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
   })

@@ -1,6 +1,5 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
-import mysql2 from "mysql2/promise";
 
 dotenv.config();
 
@@ -15,10 +14,10 @@ const db = new Sequelize(
     port: process.env.DB_PORT,
     dialect: "mysql",
     logging: isProduction ? false : console.log,
-    dialectModule: mysql2,
-    dialectOptions: {
-      connectTimeout: 60000, // Increase timeout to 60 seconds
-    },
+    // dialectModule: mysql2,
+    // dialectOptions: {
+    //   connectTimeout: 60000, // Increase timeout to 60 seconds
+    // },
   }
 );
 
