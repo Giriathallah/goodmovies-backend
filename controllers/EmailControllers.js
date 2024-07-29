@@ -29,7 +29,7 @@ const EmailController = {
         },
         to: user.email,
         subject: "Email Verification",
-        text: `Please verify your email by clicking the link: \n${process.env.FRONTEND_HOST}/verify-email?token=${token}`,
+        text: `Please verify your email by clicking the link: \n ${process.env.FRONTEND_HOST}/verify-email?token=${token}`,
       };
 
       transporter.sendMail(mailOptions);
