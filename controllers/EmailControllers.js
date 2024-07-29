@@ -29,11 +29,11 @@ const EmailController = {
         },
         to: user.email,
         subject: "Email Verification",
-        text: `Please verify your email by clicking the link: \nhttp://${process.env.SERVER_HOST}/api/verify-email?token=${token}`,
+        text: `Please verify your email by clicking the link: \n${process.env.FRONTEND_HOST}/api/verify-email?token=${token}`,
       };
 
       transporter.sendMail(mailOptions);
-      console.log(`Verification email sent to ${user.email}`);
+      // console.log(`Verification email sent to ${user.email}`);
     } catch (error) {
       console.error(`Failed to send verification email: ${error.message}`);
       throw new Error("Failed to send verification email");
